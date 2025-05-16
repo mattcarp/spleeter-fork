@@ -89,6 +89,8 @@ venv/
 ENV/
 env.bak/
 venv.bak/
+spleeter-venv/
+spleeter-venv-py311/
 
 # Spyder project settings
 .spyderproject
