@@ -115,3 +115,14 @@ spleeter-feedstock/
 
 output/
 useless_config.json
+
+# Test dataset audio files
+data/test_dataset/genres/*/*.wav
+data/test_dataset/genres/*/*.mp3
+data/test_dataset/genres/*/*.flac
+data/test_dataset/challenges/*/*.wav
+data/test_dataset/challenges/*/*.mp3
+data/test_dataset/challenges/*/*.flac
+# Keep metadata and directory structure
+!data/test_dataset/genres/*/.gitkeep
+!data/test_dataset/challenges/*/.gitkeep

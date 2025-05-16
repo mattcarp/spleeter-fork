@@ -1,0 +1,24 @@
+{
+  "dataset_version": "0.1.0",
+  "created_date": "2024-06-04",
+  "last_updated": "2024-06-04",
+  "description": "Comprehensive test dataset for audio source separation evaluation",
+  "total_files": 0,
+  "total_duration_seconds": 0,
+  "genres": {
+    "pop": 0,
+    "rock": 0,
+    "jazz": 0,
+    "classical": 0,
+    "electronic": 0,
+    "other": 0
+  },
+  "challenges": {
+    "reverberation": 0,
+    "distortion": 0,
+    "low_volume": 0,
+    "similar_timbres": 0,
+    "dynamic_range": 0
+  },
+  "samples": []
+} 

@@ -1,7 +1,18 @@
 #!/usr/bin/env python
 # coding: utf8
 
-""" This package provide an estimator builder as well as model functions. """
+"""
+Module for specifying model functions and classes.
+
+* TENSORFLOW MODERNIZATION NOTE *
+This module needs significant refactoring to work with modern TensorFlow.
+The entire module uses older TensorFlow 1.x Estimator APIs, which are
+deprecated in TensorFlow 2.x. A future implementation should replace this
+with the Keras API or other modern TensorFlow approaches.
+
+For information on migrating from Estimator to Keras, see:
+https://www.tensorflow.org/guide/migrate/migrating_estimator_to_keras
+"""
 
 import importlib
 from typing import Any, Dict, Optional, Tuple

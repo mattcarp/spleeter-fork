@@ -1,0 +1,9 @@
+{
+  "projectName": "AI-Enhanced Audio Source Separation (Spleeter Fork)",
+  "tasksDir": "tasks",
+  "tasksFile": "tasks/tasks.json",
+  "extensions": {
+    "enableShellAliases": true,
+    "enableGitHooks": false
+  }
+} 

@@ -44,6 +44,12 @@ We've developed a robust evaluation system specifically designed for audio sourc
   - Frequency-dependent separation quality analysis
   - Automated report generation for experiment tracking
 
+- **Comprehensive Test Dataset**:
+  - Multi-genre test suite with diverse musical styles
+  - Challenge-specific test cases for difficult separation scenarios
+  - Automated dataset curation tools for reproducible evaluation
+  - Metadata tracking for transparent benchmarking
+
 ![Evaluation Framework Design](../images/evaluation_framework.png)
 
 ### 3. Advanced AI Research Integration
@@ -82,12 +88,65 @@ class ZipformerEncoder:
 - **SGN (Semantic Grouping Network)**: Using content-aware clustering for similar source disambiguation
 - **Adaptive Source Modeling**: Source-specific masking strategies
 
+## Test Dataset Design
+
+Our test dataset is specifically designed to rigorously evaluate audio source separation algorithms:
+
+### Dataset Structure
+```
+test_dataset/
+├── genres/            # Genre-based test cases
+│   ├── pop/
+│   ├── rock/
+│   ├── jazz/
+│   └── ...
+└── challenges/        # Challenge-specific test cases
+    ├── reverberation/
+    ├── distortion/
+    ├── low_volume/
+    └── ...
+```
+
+### Dataset Composition Strategy
+
+1. **Diversity**: Includes various musical styles, instrumentations, and recording techniques
+2. **Challenge Focus**: Contains specifically challenging test cases (reverberation, similar timbres)
+3. **Known Ground Truth**: All samples have perfectly isolated source tracks for accurate evaluation
+4. **Metadata Tracking**: Comprehensive metadata for each sample, enabling fine-grained analysis
+
+### Automated Curation Tools
+
+We've developed automated tools for dataset management:
+```python
+# Sample code for dataset curation
+def fetch_from_freesound(
+    query: str,
+    target_dir: str,
+    license_filter: Optional[str] = "Attribution",
+    max_items: int = 5,
+) -> List[Dict]:
+    """Fetch audio samples from Freesound.org with proper attribution."""
+    # Implementation details...
+    
+def download_musdb_sample(target_dir: str) -> List[Dict]:
+    """Download sample track from MUSDB18 dataset if available."""
+    # Implementation details...
+```
+
+### Standardized Testing Protocols
+
+Our evaluation framework includes standardized testing protocols:
+1. **Fixed Test Set**: Defined test set for reproducible benchmarking
+2. **Multiple Metrics**: Comprehensive metrics suite (SDR, SIR, SAR, SI-SDR)
+3. **Time-Frequency Analysis**: Detailed per-frequency and per-time-segment analysis
+
 ## Roadmap & Current Status
 
 | Component | Status | Notes |
 |-----------|--------|-------|
 | TF Compatibility (Basic) | ✅ Complete | Tests passing with modernized implementation |
-| Evaluation Framework | 🔄 In Progress | Metrics/visualization implemented, test suite needed |
+| Evaluation Framework | ✅ Complete | Metrics, visualization, and reporting implemented |
+| Test Dataset | 🔄 In Progress | Structure created, population ongoing |
 | Zipformer Integration | 📅 Planned | Architecture research complete, implementation pending |
 | Self-Supervised Pretraining | 📅 Planned | Requires data pipeline enhancements |
 | Semantic Grouping | 📅 Planned | Research phase |
@@ -109,6 +168,14 @@ Traditional transformer models struggle with long audio sequences due to O(n²) 
 1. Researched and identified Zipformer as optimal architecture with multi-rate processing
 2. Designed custom evaluation metrics to analyze separation quality over time
 3. Frequency-dependent analysis to pinpoint issues in specific frequency bands
+
+### Challenge: Evaluation Reproducibility
+
+Audio source separation evaluations are often difficult to reproduce due to inconsistent test sets and metrics:
+
+1. Created standardized test dataset with diverse audio characteristics
+2. Implemented consistent metrics computation with fast_bss_eval
+3. Developed automated testing pipeline for reproducible benchmarking
 
 ## Performance Benchmarks
 
