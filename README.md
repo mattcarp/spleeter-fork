@@ -18,6 +18,25 @@ already trained state of the art model for performing various flavour of separat
 
 2 stems and 4 stems models have [high performances](https://github.com/deezer/spleeter/wiki/Separation-Performances) on the [musdb](https://sigsep.github.io/datasets/musdb.html) dataset. **Spleeter** is also very fast as it can perform separation of audio files to 4 stems 100x faster than real-time when run on a GPU.
 
+## Enhancements in this Fork
+
+This fork of Spleeter adds several important enhancements:
+
+1. **Modern TensorFlow Compatibility**: Modernized codebase to work with TensorFlow 2.16+ and Apple Silicon GPUs
+2. **Comprehensive Evaluation Framework**: Added scientific evaluation tools for model comparison with:
+   - Advanced metrics (SDR, SIR, SAR, SI-SDR)
+   - Frequency-dependent and time-dependent analysis
+   - Visualization tools and automated reporting
+3. **State-of-the-Art Research Integration**: Implementing modern AI architectures including:
+   - Transformer-based models with Zipformer architecture
+   - Self-supervised learning approaches (based on HuBERT/WavLM)
+   - Semantic grouping for improved separation
+
+For detailed technical information about these enhancements, see:
+- [Technical Presentation](docs/presentation.md)
+- [Evaluation Framework Documentation](docs/EVALUATION_IMPLEMENTATION.md)
+- [Latest AI Research](docs/LATEST_AI_ADVANCEMENTS.md)
+
 We designed **Spleeter** so you can use it straight from [command line](https://github.com/deezer/spleeter/wiki/2.-Getting-started#usage)
 as well as directly in your own development pipeline as a [Python library](https://github.com/deezer/spleeter/wiki/4.-API-Reference#separator). It can be installed with [pip](https://github.com/deezer/spleeter/wiki/1.-Installation#using-pip) or be used with
 [Docker](https://github.com/deezer/spleeter/wiki/2.-Getting-started#using-docker-image).
